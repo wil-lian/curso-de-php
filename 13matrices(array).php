@@ -81,17 +81,23 @@
         echo $value . "<br>";
     }
 
-    echo "<h2>Orden de una matriz (descendente) segun su clave</h2>";
+    echo "<h2>Orden de una matriz (ascendente) segun su clave</h2>";
     ksort($women);
     foreach ($women as $value) {
         echo $value . "<br>";
     }
 
+    echo "<h2>Orden de una matriz (descendente) segun su valor</h2>";
+    arsort($women);
+    foreach ($women as $value) {
+        echo $value . "<br>";
+    }
 
-
-
-
-
+    echo "<h2>Orden de una matriz (descendente) segun su clave</h2>";
+    krsort($women);
+    foreach ($women as $value) {
+        echo $value . "<br>";
+    }
     ?>
 </body>
 
