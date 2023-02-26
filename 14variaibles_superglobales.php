@@ -10,7 +10,7 @@
 
 <body>
     <h1>Variables SuperGlobales</h1>
-    <h2>$GLOBALS</h2>
+    <h2>Variable SuperGlobal $GLOBALS</h2>
     <?php
     $x = 5;
     $y = 6;
@@ -23,7 +23,7 @@
     echo "La suma es: " . $z;
     ?>
 
-    <h2>$_SERVER</h2>
+    <h2>Variable SuperGlobal $_SERVER</h2>
     <p>Es una variable superglobal que contiene imformacion <br>sobre encabezadosrutas y ubicaciones de secuencia de comandos</p>
 
     <?php
@@ -66,7 +66,8 @@
         $_SERVER['SCRIPT_URI']	Returns the URI of the current page
     */
     ?>
-    <h3>$_REQUEST</h3>
+    <h2>Variable SuperGlobal $_REQUEST</h2>
+    <h3>Se utiliza para recopilar datos despues de enviar un formulario HTML</h3>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         Nombre: <input type="text" name="fname">
         <input type="submit">
@@ -74,7 +75,7 @@
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         /* RECOPILAR EL VALOR DEL CAMPO DE ENTRADA */
-        $name = htmlspecialchars($_REQUEST["fname"]);
+        $name = htmlspecialchars($_REQUEST['fname']);
         if (empty($name)) {
             echo "El nombre esta vacio";
         } else {
@@ -82,6 +83,28 @@
         }
     }
     ?>
+
+    <h4>NOTA NO SE PUEDE PONER DOS FORMULARIOS AL MISMO TIEMPO NOS MANDA UN ERROR</h4>
+
+    <h2>Variable SuperGlobal $_POST</h2>
+    <h3>Se utiliza para recopilar datos de formulario despues de enviar un formulario HTML con el metodo="post" tambien se utiliza ampliamente para pasar variables</h3>
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        Apellido: <input type="text" name="lname">
+        <input type="submit">
+    </form>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] = "POST") {
+        $lastName = $_POST['lname'];
+        if (empty($lastName)) {
+            echo "Si el campo esta vacio";
+        } else {
+            echo "El apellido es: " . $lastName;
+        }
+    }
+    ?>
+
+    <h2>Variable SuperGlobal $_GET</h2>
+    <a href="14test_get.php?subject=PHP&web=W3schools.com&x=es facilito">Test $GET</a>
 </body>
 
 </html>
