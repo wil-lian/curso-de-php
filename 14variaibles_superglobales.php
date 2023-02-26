@@ -68,8 +68,8 @@
     ?>
     <h3>$_REQUEST</h3>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    Nombre: <input type="text" name="fname">
-    <input type="submit">
+        Nombre: <input type="text" name="fname">
+        <input type="submit">
     </form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
