@@ -23,7 +23,7 @@
             $nameErr = "El nombre es requerido";
         } else {
             $name = test_input($_POST["name"]);
-            /*conprobar si el nombre solo tiene letras y espacios en balnco */
+            /*conprobar si el nombre solo tiene letras y espacios en blanco */
             if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
                 $nameErr = "Solamente se permiten letras y espacios en blanco";
             }
