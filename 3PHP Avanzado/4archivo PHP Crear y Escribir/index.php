@@ -12,6 +12,8 @@
     fclose($myfile);
     ?>
 
+    <h2>Añadir texto</h2>
+    <h3>El modo a agrega texto al final del archivo mientra que el modo w anula borra el contenido antigua del archivo</h3>
     <?php
     $myfile = fopen("newfile.txt", "a") or die("Unable to open file!");
     $txt = "1\n";
